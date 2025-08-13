@@ -1,0 +1,2 @@
+[ 2025-08-13 17:25:18,031 ] numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+[ 2025-08-13 17:25:20,079 ] asyncio - DEBUG - Using proactor: IocpProactor
