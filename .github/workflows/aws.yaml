@@ -51,8 +51,12 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v2
 
     - name: Run Docker Image to serve users
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
       run: |
-        IMAGE_URI=${{ steps.login-ecr.outputs.registry }}/vehicleproj:latest
+        IMAGE_URI=$ECR_REGISTRY/vehicleproj:latest
+
+        echo "Pulling image: $IMAGE_URI"
 
         docker pull $IMAGE_URI
         docker stop myapp || true
